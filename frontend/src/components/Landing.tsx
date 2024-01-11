@@ -1,5 +1,12 @@
+import { useState } from "react"
+import { Link } from "react-router-dom";
+
 export const Landing = () => {
+    const [name, setName] = useState("");
     return <div>
-        Landing page
+        <input type="text" onChange={(e) =>{
+            setName(e.target.value);
+        }} />
+        <Link to={`/room/?name=${name}`}>Join room</Link>
     </div>
 }
